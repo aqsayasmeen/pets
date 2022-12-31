@@ -1,19 +1,20 @@
 import axios from 'axios'
 import { useState } from 'react';
 // import './App.css'
-function App(){
+function Pets(){
   // const [shown,setShown]=useState(false)
   const [data,setData]=useState([])
   // const[loc,setLoc]=useState("")
   const test=()=>{
-    try{
+    // try{
     let res=axios.get(`https://learnwebcode.github.io/json-example/animals-1.json`)
     .then((response)=>setData(response.data));
+    document.write(res.Promise.PromiseResult.data)
   }
-    catch{
-      console.log("error");
-    }
-  }
+    // catch{
+    //   console.log("error");
+    // }
+  
   console.log(data);
   return(
    <>
@@ -31,7 +32,7 @@ function App(){
         <p>{data.current.condition.text}</p>
         <p>{data.current.temp_c}  </p>  */}
     </>
-    :null
+    {/* :null */}
     
    {/* } */}
 
@@ -42,4 +43,4 @@ function App(){
 }
 
 
-export default App;
+export default Pets;
