@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Birthday Calculator</title>
+        <script>
+           
+    
+        </script>
+    </head>
+    <body>
+        <form>
+            <label>Date of Birth</label>
+            <input type="date" id="dob">
+            <input type="button" onclick="calculation()" value="Calculator">
+        </form>
+        <p id="birth"></p>
+        <script>
+            function calculation(){
+var date= document.getElementById("dob").value;
+var m= new Date(date);
+var y= m.getFullYear();
+var mo=m.getMonth();
+var da =m.getDate();
+var now = new Date();  
+var cy=now.getFullYear();
+var cmo= now.getMonth();
+var cda = now.getDate();
+var year= cy-y;
+var month=cmo-mo;
+var day= cda-da;
+document.getElementById("birth").innerHTML= year+" years " + month+" months "+day+" days ";    
+            }
+           
+        </script>
+    </body>
+</html>

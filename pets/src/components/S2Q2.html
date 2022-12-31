@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Record</title>
+</head>
+<body>
+  <script>
+  class employee{
+setvalue(id,name,department,salary){
+    this.id=id;
+    this.name=name;
+    this.department=department;
+    this.salary=salary;
+}
+getvalue(){
+    document.write(this.id +"<br>")
+    document.write(this.name +"<br>" )
+    document.write(this.department +"<br>") 
+    document.write(this.salary +"<br>")  
+}
+  }  
+  var obj=new employee();
+  obj.setvalue(345, "Aqsa", "IT", 50000);
+  obj.getvalue();
+  obj.setvalue(789, "Asim", "Mechanical", 70000);
+  obj.getvalue();
+  obj.setvalue(9870, "Ayesha", "Finance", 80000);
+  obj.getvalue();
+  </script>
+</body>
+</html>
