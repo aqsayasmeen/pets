@@ -13,7 +13,7 @@ function Pets() {
         .then((response) => response.json())
         .then((data) => console.log(data));
       setIsShown(2);
-      // setIsVisible(false);
+      setIsVisible(true);
     }
      else if (isShown == 2) {
       fetchAPI("https://learnwebcode.github.io/json-example/animals-3.json")
@@ -27,6 +27,7 @@ function Pets() {
   console.log(isVisible);
   return (
     <>
+    <h1> PETS DATA</h1>
       {isVisible == true ? <button onClick={fetchAPI}>Click me</button> : null}
     </>
   );

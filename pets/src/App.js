@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-// import Pets from './components/S4Q1'
-import Super from './components/S2Q3'
+import Pets from './components/S4Q1'
+// import Super from './components/S2Q3'
 function App() {
   return (
-    // <Pets/>
-    <Super/>
+    <Pets/>
+    // <Super/>
   );
 }
 
