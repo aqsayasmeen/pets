@@ -1,46 +1,35 @@
-import axios from 'axios'
-import { useState } from 'react';
-// import './App.css'
-function Pets(){
-  // const [shown,setShown]=useState(false)
-  const [data,setData]=useState([])
-  // const[loc,setLoc]=useState("")
-  const test=()=>{
-    // try{
-    let res=axios.get(`https://learnwebcode.github.io/json-example/animals-1.json`)
-    .then((response)=>setData(response.data));
-    document.write(res.Promise.PromiseResult.data)
-  }
-    // catch{
-    //   console.log("error");
-    // }
-  
-  console.log(data);
-  return(
-   <>
-   <div className='style'>
-   <h1>PETS</h1>
-        {/* <input type={'search'} value={loc} onChange={(e)=>setLoc(e.target.value)}/> */}
-   <button className='button' onClick={test}>click me</button>
-   {/* <br/>
-   <button className='button' onClick={()=>setShown(true)}> show result</button>{
-    shown==true? */}
+import React from "react";
+function Pets() {
+  const [isShown, setIsShown] = React.useState(0);
+  const [isVisible, setIsVisible] = React.useState(true);
+  const fetchAPI = () => {
+    if (isShown == 0) {
+      fetch("https://learnwebcode.github.io/json-example/animals-1.json")
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+      setIsShown(1);
+    } else if (isShown == 1) {
+      fetch("https://learnwebcode.github.io/json-example/animals-2.json")
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+      setIsShown(2);
+      // setIsVisible(false);
+    }
+     else if (isShown == 2) {
+      fetchAPI("https://learnwebcode.github.io/json-example/animals-3.json")
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+      setIsShown(0);
+      setIsVisible(false);
+    }
+  };
+  console.log(isShown);
+  console.log(isVisible);
+  return (
     <>
-    {/* <p>{data.location.country}</p>
-    <p>{data.location.region}</p>
-    <img src={data.current.condition.icon} alt="Loading Error" />
-        <p>{data.current.condition.text}</p>
-        <p>{data.current.temp_c}  </p>  */}
+      {isVisible == true ? <button onClick={fetchAPI}>Click me</button> : null}
     </>
-    {/* :null */}
-    
-   {/* } */}
-
-   </div>
-   </>
-   
-  )
+  );
 }
-
 
 export default Pets;
